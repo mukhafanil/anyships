@@ -1,0 +1,66 @@
+.footer {
+    padding: 35px 0 33px;
+    background: #051934;
+    color: #fff;
+
+    @media ($mobilePlus) {
+        padding: 26px 0;
+    }
+
+    &__desktop {
+        @media ($mobilePlus) {
+            display: none;
+        }
+    }
+    &__mobile {
+        display: none;
+
+        @media ($mobilePlus) {
+            display: block;
+        }
+    }
+
+    & &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0 50px;
+        padding: 0 36px;
+
+        @media ($tablet) {
+            flex-direction: column;
+            padding: 0 20px;
+            gap: 20px;
+        }
+        @media ($mobilePlus) {
+            padding: 0 15px;
+            gap: 13px;
+        }
+    }
+
+    & &__phone {
+        font-size: 18px;
+        line-height: 1.4;
+
+        @media ($mobilePlus) {
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+        }
+    }
+    & &__adress {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    & &__social {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    & &__politicy {
+        a {
+            text-decoration: underline;
+        }
+    }
+}

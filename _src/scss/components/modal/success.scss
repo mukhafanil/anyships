@@ -1,0 +1,20 @@
+.success-modal {
+    padding: 80px !important;
+    max-width: 694px !important;
+    max-height: 454px !important;
+
+    @media ($mobilePlus) {
+        padding: 30px !important;
+        padding-top: 80px !important;
+        max-width: 280px !important;
+    }
+    @media (max-width: 320px) {
+        padding: 20px !important;
+        padding-top: 80px !important;
+    }
+
+    & &__title {}
+    & &__button-wrap {
+        margin-top: 25px;
+    }
+}

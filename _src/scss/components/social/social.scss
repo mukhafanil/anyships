@@ -1,0 +1,29 @@
+.social {
+    width: auto;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    & &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+
+        &_big-whatsapp {
+            padding: 12px 32px;
+            border-radius: 20px;
+
+            background: #65cf72;
+            color: #fff;
+        }
+    }
+
+    img, svg {
+        display: block;
+        max-width: 27px;
+        max-height: 27px;
+    }
+}

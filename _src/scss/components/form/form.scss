@@ -1,0 +1,190 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    @media ($custom1230) {
+        gap: 18px;
+    }
+
+    & &__input-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        @media ($custom1230) {
+            gap: 10px;
+        }
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    & &__input-wrap {
+        width: auto;
+        height: auto;
+        position: relative;
+    }
+    & &__label {
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 19px 20px;
+
+        text-align: right;
+        cursor: text;
+        color: #505a68;
+        opacity: 0.6;
+
+        position: absolute;
+        left: auto;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 1;
+
+        @media ($custom1230) {
+            padding: 17px 20px;
+            font-size: 16px;
+        }
+
+        &_left {
+            text-align: left;
+            left: 0;
+            right: auto;
+        }
+
+        &_date {
+            opacity: 1;
+            &_text {
+                opacity: 0.6;
+            }
+            &_icon {
+                display: block;
+                width: 14px;
+                height: auto;
+            }
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    & &__span-desktop {
+        @media ($mobile) {
+            display: none;
+        }
+    }
+    & &__span-mobile {
+        display: none;
+
+        @media ($mobile) {
+            display: block;
+        }
+    }
+    & &__input {
+        width: 100%;
+        height: 60px;
+        padding: 20px;
+        padding-right: 35%;
+
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background: #fff;
+        outline: none;
+        transition: 0.3s ease;
+
+        font-weight: 400;
+        font-size: 18px;
+        text-align: left;
+
+        position: relative;
+        z-index: 0;
+
+        @media ($custom1230) {
+            font-size: 14px;
+            height: 54px;
+            padding: 16px 20px;
+            padding-right: 25%;
+        }
+        &:focus,
+        &:active {
+            border-color: #dbe0e7;
+            background: #f0f5f8;
+            color: #0c73fe;
+        }
+
+        &_right {
+            text-align: right;
+            padding-right: 20px;
+            padding-left: calc(100% - 53px);
+
+            @media ($custom1230) {
+                padding-left: calc(100% - 47px);
+            }
+        }
+
+        &_date {
+            padding-left: 90px;
+            padding-right: 50px;
+        }
+    }
+    & &__submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 80px;
+        padding: 20px 30px;
+        border-radius: 10px;
+        background: #0c73fe;
+
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        transition: 0.3s ease;
+
+        @media ($custom1230) {
+            height: auto;
+            padding: 22px 30px;
+            font-size: 18px;
+        }
+
+        &:hover {
+            background: #0055c7;
+        }
+    }
+    & &__politicy {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center;
+
+        @media ($custom1230) {
+            font-size: 12px;
+        }
+
+        span {
+            opacity: 0.6;
+        }
+        a {
+            text-decoration: underline;
+            transition: 0.3s ease;
+            opacity: 0.6;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

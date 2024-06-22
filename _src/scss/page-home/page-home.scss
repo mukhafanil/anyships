@@ -1,0 +1,32 @@
+.page-home {
+    & &__first-block {
+        padding: 100px 0 43px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/public/img/first-block-bg.jpg");
+        background-size: cover;
+        color: #fff;
+
+        @media ($mobilePlus) {
+            padding: 110px 0 60px;
+        }
+    }
+    & &__title {
+        text-align: center;
+
+        &_desktop {
+            @media ($mobilePlus) {
+                display: none;
+            }
+        }
+        &_mobile {
+            display: none;
+            @media ($mobilePlus) {
+                display: block;
+            }
+        }
+    }
+    & &__filter {
+        margin-top: 21px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

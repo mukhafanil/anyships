@@ -1,0 +1,149 @@
+.range-slider {
+    $textColor: #505a68;
+    $barHeight: 6px;
+    $barRadius: 5px;
+    $lineColor: #dee6f0;
+    $barColor: #0c73fe;
+
+    width: 100%;
+    height: auto;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background: #fff;
+    color: $textColor;
+    position: relative;
+
+    * {
+        font-family: $mainFont !important;
+    }
+
+    & &__input-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & &__label {
+        font-weight: 400;
+        font-size: 16px;
+        color: #505a68;
+        opacity: 0.6;
+    }
+    & &__input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+    & &__input {
+        border: 1px solid #dbe0e7;
+        border-radius: 6px;
+        width: 56px;
+        height: 26px;
+
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #000;
+    }
+    & &__input_w65 {
+        width: 65px;
+    }
+    & &__input-separator {
+        font-size: 14px;
+    }
+    & &__input-group {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        text-align: right;
+        color: #000;
+    }
+    & &__grid-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 20px;
+        font-weight: 400;
+        font-size: 11px;
+        color: #505a68;
+        opacity: 0.6;
+
+        position: absolute;
+        bottom: 14px;
+        left: 0;
+        right: 0;
+        top: auto;
+        margin: auto;
+    }
+
+    .irs {}
+    .irs--flat.irs-with-grid {
+        height: 46px;
+    }
+    .irs--flat {
+        .irs-line {
+            height: $barHeight;
+            border-radius: $barRadius;
+            background: $lineColor;
+            top: 12px;
+        }
+        .irs-bar {
+            height: $barHeight;
+            border-radius: $barRadius;
+            background: $barColor;
+            top: 12px;
+        }
+        .irs-handle {
+            width: 16px;
+            height: 16px;
+            background: $barColor;
+            border-radius: 50%;
+            top: 7px;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 6px;
+                height: 6px;
+                background: #fff;
+                border-radius: 50%;
+
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            i {
+                display: none !important;
+            }
+        }
+        .irs-grid-text {
+            font-size: 11px;
+            color: $textColor;
+            opacity: 0.6;
+            visibility: visible !important;
+
+            @media ($mobile) {
+                font-size: 8px;
+            }
+        }
+        .irs-grid-pol {
+            height: 6px;
+            top: -1px;
+        }
+        .irs-grid-pol.small {
+            display: none;
+        }
+    }
+
+    &_without-numbers {
+        .irs--flat .irs-grid-text {
+            visibility: hidden !important;
+        }
+    }
+}

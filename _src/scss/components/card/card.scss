@@ -1,0 +1,298 @@
+.card {
+    $mainTransition: 0.5s ease-in-out;
+
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 59.31%, rgba(0, 0, 0, 0.7) 100%);
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+
+    & &__image-wrap {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 59.31%, rgba(0, 0, 0, 0.7) 100%);
+
+            transition: $mainTransition;
+            
+            @media ($mobilePlus) {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 38.36%, rgba(0, 0, 0, 0.7) 81.35%);
+            }
+        }
+    }
+    & &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+
+        transition: $mainTransition;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    & &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 7px;
+
+        width: 100%;
+        height: 100%;
+
+        position: relative;
+        z-index: 1;
+    }
+    & &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        width: 100%;
+        padding: 13px 14px 13px 17px;
+
+        transition: $mainTransition;
+        transform: translateY(-100%);
+
+        @media ($mobilePlus) {
+            transform: none;
+            padding: clamp(12px, 6.13vw, 23px) clamp(14px, 5.87vw, 22px) 10px;
+        }
+    }
+    & &__logo {
+        display: block;
+        width: 30px;
+        height: auto;
+    }
+    & &__footer {
+        width: 100%;
+        padding: 16px 21px 16px 22px;
+
+        @media ($mobilePlus) {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(10px, 4vw, 15px);
+            padding: 10px clamp(14px, 5.60vw, 21px) clamp(20px, 6.67vw, 25px) clamp(14px, 5.87vw, 22px);
+        }
+    }
+    & &__title {
+        font-size: 18px;
+        transition: $mainTransition;
+        font-weight: 600;
+
+        @media ($mobilePlus) {
+            font-size: clamp(14px, 4.27vw, 16px);
+        }
+    }
+    & &__info-animate {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: $mainTransition;
+        transform: scaleY(0);
+        transform-origin: center;
+        opacity: 0;
+
+        @media ($mobilePlus) {
+            display: block;
+            width: 100%;
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        & > div {
+            overflow: hidden;
+        }
+    }
+    & &__info-list {
+        @media ($mobilePlus) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 17px;
+        }
+    }
+    & &__info-wrap {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 7px;
+
+        @media ($mobilePlus) {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 17px;
+        }
+        @media (max-width: 374px) {
+            gap: 10px;
+        }
+    }
+    & &__info {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+
+        &_desktop {
+            @media ($mobilePlus) {
+                display: none !important;
+            }
+        }
+        &_mobile {
+            display: none !important;
+            @media ($mobilePlus) {
+                display: grid !important;
+            }
+        }
+
+        &:first-child {
+            padding-top: 7px;
+
+            @media ($mobilePlus) {
+                padding-top: 0;
+            }
+        }
+        &:last-child {
+            padding-bottom: 4px;
+
+            @media ($mobilePlus) {
+                padding-bottom: 0;
+            }
+        }
+
+        @media ($mobilePlus) {
+            width: auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1px;
+            flex: 1 1 auto;
+        }
+    }
+    & &__value {
+        font-size: 14px;
+        font-weight: 600;
+        flex: 0 0 74px;
+        
+        @media ($mobilePlus) {
+            font-size: clamp(11px, 3.20vw, 12px);
+            font-weight: 400;
+        }
+    }
+    & &__label {
+        font-size: 14px;
+        transition: $mainTransition;
+        opacity: 0.5;
+
+        @media ($mobilePlus) {
+            font-size: clamp(10px, 2.93vw, 11px);
+            font-weight: 400;
+        }
+    }
+    & &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 51px;
+        height: 28px;
+        padding-bottom: 1px;
+        font-size: 18px;
+        border-radius: 25px;
+
+        transition: 0.3s ease;
+        border: 1px solid #fff;
+        background: transparent;
+        color: #fff;
+
+        &:hover {
+            background: #0c73fe;
+            border-color: #0c73fe;
+        }
+
+        @media ($mobilePlus) {
+            display: none;
+        }
+    }
+
+    &:hover {
+        .card__header {
+            transform: translateY(0%);
+        }
+        .card__image-wrap:after {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .card__image {
+            transform: scale(1.1);
+
+            @media ($mobilePlus) {
+                transform: none;
+            }
+        }
+        .card__title {
+            padding-bottom: 8px;
+
+            @media ($mobilePlus) {
+                padding-bottom: 0;
+            }
+        }
+        .card__info-animate {
+            padding-top: 7px;
+            grid-template-rows: 1fr;
+            transform: scaleY(1);
+            opacity: 1;
+
+            @media ($mobilePlus) {
+                padding-top: 0px;
+            }
+        }
+        .card__label {
+            opacity: 1;
+
+            @media ($mobilePlus) {
+                opacity: 0.5;
+            }
+        }
+    }
+
+
+    &_disabled {
+        pointer-events: none;
+
+        .card__image-wrap:after {
+            content: 'Временно недоступно';
+            padding: 16px 22px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .card__header {
+            visibility: hidden;
+        }
+        .card__title,
+        .card__value,
+        .card__label {
+            opacity: 0.4;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.filter {
+    width: 100%;
+    max-width: 824px;
+    margin-left: auto;
+    margin-right: auto;
+    & &__form {
+        gap: 10px;
+
+        @media ($mobilePlus) {
+            gap: 7px;
+        }
+
+    }
+    & &__grid1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        
+        @media ($mobilePlus) {
+            grid-template-columns: 1fr;
+        }
+    }
+    & &__grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        @media ($mobilePlus) {
+            grid-template-columns: 1fr;
+            gap: 7px;
+        }
+    }
+    & &__input {
+        border: none;
+        border-right: 1px solid #dbe0e7;
+        border-radius: 0;
+
+        @media ($mobilePlus) {
+            border-bottom: 1px solid #dbe0e7;
+        }
+        &_left {
+            border-radius: 10px 0 0 10px;
+
+            @media ($mobilePlus) {
+                border-radius: 10px 10px 0 0;
+            }
+        }
+        &_middle {
+        }
+        &_right {
+            border-radius: 0 10px 10px 0;
+
+            @media ($mobilePlus) {
+                border-radius: 0 0 10px 10px;
+                border: none;
+            }
+        }
+    }
+    & &__submit {
+        display: grid;
+        height: auto;
+        grid-template-columns: auto;
+        padding: 15px;
+        gap: 4px;
+
+        @media ($mobilePlus) {
+            gap: 7px;
+        }
+    }
+    & &__pre-result {
+        display: block;
+        font-size: 13px;
+        color: #fff;
+        border-radius: 50px;
+        padding: 6px 20px;
+        background: rgba(0, 0, 0, 0.1);
+
+        @media ($mobilePlus) {
+            font-size: 11px;
+        }
+    }
+}

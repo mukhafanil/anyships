@@ -1,0 +1,75 @@
+.reservation {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+
+    width: auto;
+    height: auto;
+    max-width: 1220px !important;
+    max-height: 606px !important;
+
+    @media ($custom1230) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    & &__left {
+        width: 513px;
+        height: auto;
+
+        @media ($custom1230) {
+            width: 100%;
+            height: 100%;
+            max-width: 320px;
+            max-height: 230px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media ($mobile) {
+            max-height: 200px;
+        }
+    }
+    & &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        object-fit: cover;
+
+        @media ($custom1230) {
+            border-radius: 14px;
+        }
+    }
+    & &__right {
+        width: 100%;
+    }
+    & &__form {
+        margin-top: 25px;
+
+        @media ($custom1230) {
+            margin-top: 20px;
+        }
+    }
+    & &__form-grid {
+        grid-template-columns: 1fr 1fr !important;
+
+        @media ($mobile) {
+            grid-template-columns: 1fr !important;
+        }
+
+        & > div {
+            grid-column: span 2;
+
+            @media ($mobile) {
+                grid-column: span 1;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                grid-column: span 1;
+            }
+        }
+    }
+}

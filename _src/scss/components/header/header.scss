@@ -1,0 +1,95 @@
+.header {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    &_fixed {
+        background: #061933;
+    }
+
+    & &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 19px;
+        padding-bottom: 17px;
+        position: relative;
+    }
+    & &__logo {
+        display: block;
+        width: 210px;
+        height: auto;
+        position: relative;
+        z-index: 1;
+
+        svg, img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    & &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 11px;
+        padding: 10px 30px;
+        height: 38px;
+
+        font-weight: 400;
+        font-size: 12px;
+        color: #fff;
+
+        border: 1px solid #fff;
+        border-radius: 40px;
+        background: transparent;
+        transition: 0.3s ease;
+
+        position: absolute;
+        right: 30px;
+        left: auto;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        @media ($mobilePlus) {
+            display: flex;
+            width: 40px;
+            border: none;
+            right: 15px;
+            padding: 0;
+            border-radius: 0;
+
+            span {
+                display: none;
+            }
+        }
+        @media (max-width: 360px) {
+            right: 10px;
+        }
+
+
+        &:hover {
+            background: #0c73fe;
+            border-color: #0c73fe;
+
+            @media ($mobilePlus) {
+                background: transparent;
+                border-color: transparent;
+            }
+        }
+
+        svg, img {
+            display: block;
+            width: auto;
+            height: auto;
+        }
+    }
+}
